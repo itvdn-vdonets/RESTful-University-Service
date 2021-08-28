@@ -1,0 +1,5 @@
+id,name,startData,endDate,numberOfStudentsEnrolled,professor
+51,Big Data,2021-10-28T08:16:46.687Z,2021-10-28T08:16:46.687Z,2,Professor{id=1, name='Ivan', surname='Medvedko'},
+52,Newest technologies,2021-10-28T08:16:46.687Z,2021-10-28T08:16:46.687Z,2,Professor{id=2, name='Sergey', surname='Danileyko'},
+53,Java technologies,2021-10-28T08:16:46.687Z,2021-10-28T08:16:46.687Z,3,Professor{id=2, name='Sergey', surname='Danileyko'},
+54,Newest technologies,2021-10-28T08:16:46.687Z,2021-10-28T08:16:46.687Z,2,Professor{id=2, name='Sergey', surname='Danileyko'},
