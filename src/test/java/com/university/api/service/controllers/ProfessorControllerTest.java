@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @WebMvcTest(ProfessorController.class)
-public class ProfessorControllerTest {
+class ProfessorControllerTest {
     @Autowired
     MockMvc mockMvc;
 
@@ -45,7 +45,7 @@ public class ProfessorControllerTest {
 
 
     @Test
-    public void post_createsNewProfessor_andReturnsObjWith201() throws Exception {
+    void post_createsNewProfessor_andReturnsObjWith201() throws Exception {
         //Given
         Professor professor = new Professor("Andy", "Warhol");
         professor.setId(1L);
@@ -69,7 +69,7 @@ public class ProfessorControllerTest {
 
 
     @Test
-    public void post_createsNewProfessor_andReturns500() throws Exception {
+    void post_createsNewProfessor_andReturns500() throws Exception {
         //Given
         Professor professor = new Professor();
 
@@ -84,7 +84,7 @@ public class ProfessorControllerTest {
 
 
     @Test
-    public void get_findProfessorById_andReturnsObjWith200() throws Exception {
+    void get_findProfessorById_andReturnsObjWith200() throws Exception {
         //Given
         Professor professor = new Professor("Andy", "Warhol");
         professor.setId(1L);
@@ -107,7 +107,7 @@ public class ProfessorControllerTest {
     }
 
     @Test
-    public void get_findProfessorById_andReturns404() throws Exception {
+    void get_findProfessorById_andReturns404() throws Exception {
         //Given
         Professor professor = new Professor("Andy", "Warhol");
         professor.setId(1L);
@@ -123,7 +123,7 @@ public class ProfessorControllerTest {
     }
 
     @Test
-    public void put_updateProfessor_andReturns201() throws Exception {
+    void put_updateProfessor_andReturns201() throws Exception {
         //Given
         Professor professor = new Professor("Andy", "Warhol");
         professor.setId(1L);
@@ -164,7 +164,7 @@ public class ProfessorControllerTest {
     }
 
     @Test
-    public void delete_deleteProfessorById_andReturns200() throws Exception {
+    void delete_deleteProfessorById_andReturns200() throws Exception {
         //Given
         Professor professor = new Professor("Andy", "Warhol");
         professor.setId(1L);
@@ -179,7 +179,7 @@ public class ProfessorControllerTest {
     }
 
     @Test
-    public void delete_deleteProfessorById_andReturns404() throws Exception {
+    void delete_deleteProfessorById_andReturns404() throws Exception {
         //Given
         Professor professor = new Professor("Andy", "Warhol");
         professor.setId(1L);

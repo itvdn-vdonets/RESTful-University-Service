@@ -47,12 +47,11 @@ public class CourseControllerTest {
     @Captor
     private ArgumentCaptor<List<Long>> listCommandCaptor;
 
-
     @Captor
     private ArgumentCaptor<Long> idCaptor;
 
     @Test
-    public void post_createsNewProfessor_andReturnsObjWith201() throws Exception {
+    void post_createsNewProfessor_andReturnsObjWith201() throws Exception {
         //Given
         Student student = new Student("Jen", "Kwo");
         student.setId(1L);
@@ -62,9 +61,9 @@ public class CourseControllerTest {
         ids.add(1L);
         Professor professor = new Professor("Mike", "Wako");
         professor.setId(1L);
-        Course course = new Course("Big Data", Instant.parse("2021-10-28T08:16:46.687Z"), Instant.parse("2021-11-28T08:16:46.687Z"), students, professor);
+        Course course = new Course("Big Data", Instant.parse("2022-10-28T08:16:46.687Z"), Instant.parse("2023-11-28T08:16:46.687Z"), students, professor);
         course.setId(1L);
-        CourseCommand courseCommand = new CourseCommand(1L, "Big Data", Instant.parse("2021-10-28T08:16:46.687Z"), Instant.parse("2021-11-28T08:16:46.687Z"), ids, 1L);
+        CourseCommand courseCommand = new CourseCommand(1L, "Big Data", Instant.parse("2023-10-28T08:16:46.687Z"), Instant.parse("2023-11-28T08:16:46.687Z"), ids, 1L);
 
         //When
         when(courseService.addCourse(any(CourseCommand.class))).thenReturn(course);
@@ -87,7 +86,7 @@ public class CourseControllerTest {
     }
 
     @Test
-    public void get_findCourseById_andReturnsObjWith200() throws Exception {
+    void get_findCourseById_andReturnsObjWith200() throws Exception {
         //Given
         Student student = new Student("Jen", "Kwo");
         student.setId(1L);
@@ -118,9 +117,8 @@ public class CourseControllerTest {
         verify(courseService, times(1)).findCourseById(idCaptor.capture());
     }
 
-
     @Test
-    public void get_findCourseById_andReturns404() throws Exception {
+    void get_findCourseById_andReturns404() throws Exception {
         //Given
         Student student = new Student("Jen", "Kwo");
         student.setId(1L);
@@ -140,9 +138,8 @@ public class CourseControllerTest {
                 .andExpect(status().isNotFound());
     }
 
-
     @Test
-    public void put_updateCourse_andReturnsObjWith200() throws Exception {
+    void put_updateCourse_andReturnsObjWith200() throws Exception {
         //Given
         Student student = new Student("Jen", "Kwo");
         student.setId(1L);
@@ -152,9 +149,9 @@ public class CourseControllerTest {
         ids.add(1L);
         Professor professor = new Professor("Mike", "Wako");
         professor.setId(1L);
-        Course course = new Course("Big Data", Instant.parse("2021-10-28T08:16:46.687Z"), Instant.parse("2021-11-28T08:16:46.687Z"), students, professor);
+        Course course = new Course("Big Data", Instant.parse("2023-10-28T08:16:46.687Z"), Instant.parse("2023-11-28T08:16:46.687Z"), students, professor);
         course.setId(1L);
-        CourseCommand courseCommand = new CourseCommand(1L, "Big Data", Instant.parse("2021-10-28T08:16:46.687Z"), Instant.parse("2021-11-28T08:16:46.687Z"), ids, 1L);
+        CourseCommand courseCommand = new CourseCommand(1L, "Big Data", Instant.parse("2023-10-28T08:16:46.687Z"), Instant.parse("2023-11-28T08:16:46.687Z"), ids, 1L);
 
         //When
         when(courseService.updateCourse(any(CourseCommand.class))).thenReturn(course);
@@ -178,7 +175,7 @@ public class CourseControllerTest {
 
 
     @Test
-    public void delete_deleteCourseById_andReturns200() throws Exception {
+    void delete_deleteCourseById_andReturns200() throws Exception {
         //Given
         Student student = new Student("Jen", "Kwo");
         student.setId(1L);
@@ -199,7 +196,7 @@ public class CourseControllerTest {
     }
 
     @Test
-    public void delete_deleteCourseById_andReturns404() throws Exception {
+    void delete_deleteCourseById_andReturns404() throws Exception {
         //Given
         Student student = new Student("Jen", "Kwo");
         student.setId(1L);

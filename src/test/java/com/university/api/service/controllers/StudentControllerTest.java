@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(StudentController.class)
-public class StudentControllerTest {
+class StudentControllerTest {
 
     @Autowired
     MockMvc mockMvc;
@@ -38,7 +38,7 @@ public class StudentControllerTest {
     private ArgumentCaptor<Long> idCaptor;
 
     @Test
-    public void post_createsNewStudent_andReturnsObjWith201() throws Exception {
+    void post_createsNewStudent_andReturnsObjWith201() throws Exception {
         //Given
         Student student = new Student("Robert", "Carlos");
         student.setId(1L);
@@ -61,7 +61,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void post_createsNewStudent_andReturns500() throws Exception {
+    void post_createsNewStudent_andReturns500() throws Exception {
         //Given
         Student student = new Student();
 
@@ -75,7 +75,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void get_findStudentById_andReturnsObjWith200() throws Exception {
+    void get_findStudentById_andReturnsObjWith200() throws Exception {
         //Given
         Student student = new Student("Robert", "Carlos");
         student.setId(1L);
@@ -98,7 +98,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void get_findStudentById_andReturns404() throws Exception {
+    void get_findStudentById_andReturns404() throws Exception {
         //Given
         Student student = new Student("Robert", "Carlos");
         student.setId(1L);
@@ -114,7 +114,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void put_updateStudent_andReturns201() throws Exception {
+    void put_updateStudent_andReturns201() throws Exception {
         //Given
         Student student = new Student("Mike", "Wako");
         student.setId(1L);
@@ -138,7 +138,7 @@ public class StudentControllerTest {
 
 
     @Test
-    public void put_updateStudent_andReturns404() throws Exception {
+    void put_updateStudent_andReturns404() throws Exception {
         //Given
         Student student = new Student("Mike", "Wako");
         student.setId(1L);
@@ -154,7 +154,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void delete_deleteStudentById_andReturns200() throws Exception {
+    void delete_deleteStudentById_andReturns200() throws Exception {
         //Given
         Student student = new Student("Mike", "Wako");
         student.setId(1L);
@@ -169,7 +169,7 @@ public class StudentControllerTest {
     }
 
     @Test
-    public void delete_deleteStudentById_andReturns404() throws Exception {
+    void delete_deleteStudentById_andReturns404() throws Exception {
         //Given
         Student student = new Student("Mike", "Wako");
         student.setId(1L);
