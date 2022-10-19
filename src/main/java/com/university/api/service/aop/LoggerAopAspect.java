@@ -41,7 +41,7 @@ public class LoggerAopAspect {
 
     @AfterReturning(pointcut = "joinPointerServiceLog()", returning = "value")
     public void logAfterReturningAllMethods(Object value) {
-        System.out.println("Returing: "+value.toString());
+        System.out.println("Returing: "+value);
     }
 
     @Around("addStudentPointerServiceLog(student)")

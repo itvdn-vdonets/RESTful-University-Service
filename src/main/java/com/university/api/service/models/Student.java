@@ -2,6 +2,7 @@ package com.university.api.service.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotBlank;
 import java.util.Objects;
@@ -9,7 +10,6 @@ import java.util.Objects;
 @Document
 public class Student {
     public static final String SEQUENCE_NAME = "students_sequence";
-
     @Id
     private Long id;
     @NotBlank(message = "Error, name cannot be empty!")

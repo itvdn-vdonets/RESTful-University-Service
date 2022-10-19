@@ -33,7 +33,7 @@ public class CourseController {
     @GetMapping("/{id}")
     public ResponseEntity<Course> getCourseById(@PathVariable Long id) {
         Course courseById = courseService.findCourseById(id).orElseThrow( () -> new CourseNotFoundException("Course not found with id: "+id));
-        return ResponseEntity.ok(courseById);
+        return ResponseEntity.status(HttpStatus.OK).body(courseById);
     }
 
     @DeleteMapping("/{id}")

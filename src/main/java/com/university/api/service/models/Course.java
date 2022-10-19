@@ -2,6 +2,7 @@ package com.university.api.service.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.Transient;
 import javax.validation.constraints.Future;

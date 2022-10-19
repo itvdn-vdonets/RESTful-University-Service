@@ -6,6 +6,7 @@ import com.university.api.service.models.Student;
 import com.university.api.service.services.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,6 +46,7 @@ public class StudentController {
         return ResponseEntity.ok(studentService.updateStudent(studentUpdateCommand));
     }
 
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteStudentById(@PathVariable long id) {
         studentService.deleteStudentById(id);
