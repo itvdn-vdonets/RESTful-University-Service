@@ -30,8 +30,13 @@ public class StudentController {
     }
 
     @PostMapping
-    public ResponseEntity<Student> addStudent(@RequestBody @Valid Student student) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(studentService.addStudent(student));
+    public ResponseEntity<Student> createStudentOrReturnCached(@RequestBody @Valid Student student) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(studentService.createStudentOrReturnCached(student));
+    }
+
+    @PostMapping("/refresh")
+    public ResponseEntity<Student> createStudentAndRefreshCache(@RequestBody @Valid Student student) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(studentService.createStudentAndRefreshCache(student));
     }
 
     @GetMapping("/{id}")
